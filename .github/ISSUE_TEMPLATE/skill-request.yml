@@ -1,0 +1,19 @@
+name: New skill request
+description: Suggest a skill you would like to see here.
+labels: ["skill-request"]
+body:
+  - type: textarea
+    id: task
+    attributes:
+      label: The task
+      description: What you want an agent to handle.
+    validations:
+      required: true
+
+  - type: textarea
+    id: today
+    attributes:
+      label: How you handle it today
+      description: And what goes wrong without a skill.
+    validations:
+      required: true

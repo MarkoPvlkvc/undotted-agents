@@ -1,0 +1,67 @@
+name: Script bug
+description: A script shipped with a skill crashed or gave wrong output.
+labels: ["bug"]
+body:
+  - type: input
+    id: script
+    attributes:
+      label: Script
+      description: Its path inside the skill.
+      placeholder: skills-standalone/autopilot/scripts/context-monitor.sh
+    validations:
+      required: true
+
+  - type: input
+    id: copy
+    attributes:
+      label: Which copy of the skill
+      description: The commit SHA of this repo, or the date you installed it, and how you installed it.
+    validations:
+      required: true
+
+  - type: textarea
+    id: command
+    attributes:
+      label: Command you ran
+      render: shell
+    validations:
+      required: true
+
+  - type: textarea
+    id: output
+    attributes:
+      label: Output or error
+      description: The full output, not a summary.
+      render: text
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: OS and runtime versions
+      placeholder: "macOS 15.1, node 22.11.0, bash 5.2"
+    validations:
+      required: true
+
+  - type: textarea
+    id: fix
+    attributes:
+      label: Proposed fix
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched existing issues for this.
+          required: true

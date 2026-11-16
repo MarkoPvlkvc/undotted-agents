@@ -1,0 +1,136 @@
+name: Skill misbehavior
+description: An agent running one of these skills did something the skill should have prevented, or skipped something it asks for.
+labels: ["skill-misbehavior"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Fill in enough that someone else can rerun what you saw. See CONTRIBUTING.md for what makes a good report. Remove secrets and private content from anything you paste.
+
+  - type: input
+    id: skill
+    attributes:
+      label: Skill
+      placeholder: autopilot
+    validations:
+      required: true
+
+  - type: input
+    id: copy
+    attributes:
+      label: Which copy of the skill
+      description: The commit SHA of this repo, or the date you installed it, and how you installed it (plugin, npx skills, git copy).
+      placeholder: "a1b2c3d, installed as a plugin"
+    validations:
+      required: true
+
+  - type: input
+    id: harness
+    attributes:
+      label: Harness and version
+      placeholder: "name and version of the agent tool you ran"
+    validations:
+      required: true
+
+  - type: input
+    id: model
+    attributes:
+      label: Model
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: What the agent did
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+
+  - type: textarea
+    id: prompt
+    attributes:
+      label: Prompt or task
+      description: What you gave the agent, word for word.
+    validations:
+      required: true
+
+  - type: textarea
+    id: transcript
+    attributes:
+      label: Transcript excerpt
+      description: The turns leading up to the wrong step, and the step itself. Attach the session file if you can.
+    validations:
+      required: true
+
+  - type: textarea
+    id: repo-state
+    attributes:
+      label: Repo state
+      description: Only if the behavior depended on it, such as files present, git status, or a config the agent read.
+    validations:
+      required: false
+
+  - type: input
+    id: frequency
+    attributes:
+      label: How often
+      placeholder: "once, or 3 of 5 runs of the same prompt"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: cause-kind
+    attributes:
+      label: What went wrong with the instruction
+      options:
+        - Not sure
+        - It fired at the wrong moment, or where it should not have
+        - It was missing, so nothing covered this moment
+        - It was there, and the agent read it in a way that skipped what it asks for
+    validations:
+      required: false
+
+  - type: textarea
+    id: cause
+    attributes:
+      label: Why it happened
+      description: Quote the instruction or name its heading. Then name the general practice the agent broke, not only this case.
+    validations:
+      required: false
+
+  - type: textarea
+    id: fix
+    attributes:
+      label: Proposed fix
+      description: The old text of the instruction and your new text.
+      value: |
+        Old:
+
+        New:
+    validations:
+      required: false
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence the fix works
+      description: Counts from running the same prompt under the old and new text (for example old 1/10, new 10/10), plus a near-miss prompt where the rule must not fire, run under the new text.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched existing issues for this.
+          required: true
+        - label: I removed secrets and private content from what I pasted.
+          required: true

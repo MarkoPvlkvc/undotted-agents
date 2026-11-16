@@ -1,0 +1,17 @@
+{
+  "name": "undotted-agents",
+  "owner": {
+    "name": "markopvlkvc"
+  },
+  "description": "The skills I run every day, made public.",
+  "plugins": [
+    {
+      "name": "undotted",
+      "source": "./",
+      "description": "Every skill in undotted-agents: .",
+      "skills": [
+        "./skills-standalone/"
+      ]
+    }
+  ]
+}
