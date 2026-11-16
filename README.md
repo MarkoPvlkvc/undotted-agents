@@ -13,7 +13,10 @@ A dotfolder is hidden by default, and so is that repo. Some of what I write ther
 ## Skills
 
 <!-- skills:start -->
+- [autopilot](skills-standalone/autopilot): Claude Code only. Runs any long goal to completion unattended (a refactor, a migration, a finished plan, "run &lt;skill> until done"), recycling fresh background orchestrators before their context fills so nobody checkpoints and resumes by hand. Use when the user wants a task run hands-off, autonomously, or until done, says "leave it to work" or "just finish this", or wants to walk away while a long build runs. Needs a checkable done condition (a command or a checklist); open-ended work with none is out of scope.
 <!-- skills:end -->
+
+![autopilot recycles each orchestrator at a soft or hard context threshold, and run.md carries the work to the next one until the done check passes](assets/autopilot.png)
 
 ## Install
 

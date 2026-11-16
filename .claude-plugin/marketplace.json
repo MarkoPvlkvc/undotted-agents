@@ -8,7 +8,7 @@
     {
       "name": "undotted",
       "source": "./",
-      "description": "Every skill in undotted-agents: .",
+      "description": "Every skill in undotted-agents: autopilot.",
       "skills": [
         "./skills-standalone/"
       ]
