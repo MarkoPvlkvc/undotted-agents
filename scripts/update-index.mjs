@@ -9,7 +9,7 @@ const END = "<!-- skills:end -->";
 const DEFAULTS = {
   name: "undotted-agents",
   owner: { name: "markopvlkvc" },
-  description: "The skills I run every day, made public.",
+  description: "Skills for coding agents with the dot taken off.",
 };
 
 function unquote(raw) {

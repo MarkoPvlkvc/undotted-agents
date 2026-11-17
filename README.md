@@ -1,9 +1,5 @@
 ![undotted-agents: skills for coding agents, with the dot taken off](assets/banner.png)
 
-# undotted-agents
-
-The skills I run every day, made public.
-
 ## Why undotted-agents
 
 I keep my coding-agent setup in a private `~/.agents` repo. It contains: skills, agent types, hooks, global instructions / system prompts, etc. That Claude Code and Pi load. Plus a small CLI that pulls skills from pinned upstream repos, toggles them on and off, and links everything into each harness. The point of that private repo was to have everything in one place, organized, and that i can easily toggle certain skills for context management.
